@@ -1,2 +1,0 @@
-# KakvoYam
-Food diary assistant
