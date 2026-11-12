@@ -28,21 +28,27 @@ export default function HomeScreen() {
       <View>
         <Text style={screenStyles.sectionTitle}>How it works</Text>
         <View style={styles.stepRow}>
-          <View style={styles.stepNumber}><Text style={styles.stepNumberText}>1</Text></View>
+          <View style={styles.stepNumber}>
+            <Text style={styles.stepNumberText}>1</Text>
+          </View>
           <View style={styles.stepCopy}>
             <Text style={styles.stepTitle}>Record what you eat</Text>
             <Text style={screenStyles.muted}>Add meals, snacks, drinks and quantities.</Text>
           </View>
         </View>
         <View style={styles.stepRow}>
-          <View style={styles.stepNumber}><Text style={styles.stepNumberText}>2</Text></View>
+          <View style={styles.stepNumber}>
+            <Text style={styles.stepNumberText}>2</Text>
+          </View>
           <View style={styles.stepCopy}>
             <Text style={styles.stepTitle}>Complete three days</Text>
             <Text style={screenStyles.muted}>Save your progress as you go.</Text>
           </View>
         </View>
         <View style={styles.stepRow}>
-          <View style={styles.stepNumber}><Text style={styles.stepNumberText}>3</Text></View>
+          <View style={styles.stepNumber}>
+            <Text style={styles.stepNumberText}>3</Text>
+          </View>
           <View style={styles.stepCopy}>
             <Text style={styles.stepTitle}>Submit for review</Text>
             <Text style={screenStyles.muted}>Your nutritionist will review the information.</Text>

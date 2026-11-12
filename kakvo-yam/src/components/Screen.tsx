@@ -1,8 +1,21 @@
+import type { ReactNode } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Spacing } from '../constants/theme';
 
-export default function Screen({ eyebrow, title, subtitle, children }) {
+type ScreenProps = {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  children: ReactNode;
+};
+
+export default function Screen({
+  eyebrow,
+  title,
+  subtitle,
+  children,
+}: ScreenProps) {
   return (
     <SafeAreaView style={styles.safeArea} edges={['top', 'left', 'right']}>
       <ScrollView
@@ -51,7 +64,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     gap: Spacing.xl,
     padding: Spacing.xl,
-    paddingBottom: Spacing.xxl,
+    paddingBottom: Spacing.xxl + 24,
   },
   eyebrow: {
     color: Colors.primary,

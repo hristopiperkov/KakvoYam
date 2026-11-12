@@ -8,7 +8,7 @@ export const Colors = {
   textMuted: '#748076',
   border: '#E3E9E1',
   accent: '#E9E4D7',
-};
+} as const;
 
 export const Spacing = {
   xs: 4,
@@ -17,11 +17,11 @@ export const Spacing = {
   lg: 16,
   xl: 24,
   xxl: 32,
-};
+} as const;
 
 export const Radius = {
   md: 12,
   lg: 18,
   xl: 24,
   pill: 999,
-};
+} as const;
