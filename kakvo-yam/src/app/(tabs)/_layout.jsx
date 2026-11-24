@@ -7,19 +7,26 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: Colors.primaryDark,
+        tabBarActiveTintColor: Colors.primary,
         tabBarInactiveTintColor: Colors.textMuted,
         tabBarLabelStyle: {
-          fontSize: 12,
-          fontWeight: '600',
-          marginBottom: 3,
+          fontSize: 11,
+          fontWeight: '800',
+          letterSpacing: 0.4,
+          marginBottom: 2,
+        },
+        tabBarItemStyle: {
+          borderRadius: 14,
+          marginHorizontal: 6,
+          marginVertical: 6,
         },
         tabBarStyle: {
           backgroundColor: Colors.surface,
           borderTopColor: Colors.border,
-          height: 68,
-          paddingTop: 6,
-          paddingBottom: 4,
+          borderTopWidth: 1,
+          height: 76,
+          paddingTop: 8,
+          paddingBottom: 8,
         },
       }}
     >
@@ -27,7 +34,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarLabel: 'Home',
+          tabBarLabel: 'HOME',
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? 'home' : 'home-outline'}
@@ -41,7 +48,7 @@ export default function TabLayout() {
         name="diary"
         options={{
           title: 'Diary',
-          tabBarLabel: 'Diary',
+          tabBarLabel: 'DIARY',
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? 'book' : 'book-outline'}
@@ -55,7 +62,7 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: 'Profile',
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'PROFILE',
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? 'person' : 'person-outline'}

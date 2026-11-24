@@ -1,21 +1,8 @@
-import type { ReactNode } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Spacing } from '../constants/theme';
 
-type ScreenProps = {
-  eyebrow?: string;
-  title: string;
-  subtitle?: string;
-  children: ReactNode;
-};
-
-export default function Screen({
-  eyebrow,
-  title,
-  subtitle,
-  children,
-}: ScreenProps) {
+export default function Screen({ eyebrow, title, subtitle, children }) {
   return (
     <SafeAreaView style={styles.safeArea} edges={['top', 'left', 'right']}>
       <ScrollView
@@ -35,23 +22,24 @@ export default function Screen({
 }
 
 export const screenStyles = StyleSheet.create({
-  card: {
-    backgroundColor: Colors.surface,
-    borderColor: Colors.border,
-    borderRadius: 20,
-    borderWidth: 1,
-    padding: Spacing.xl,
-  },
   sectionTitle: {
     color: Colors.text,
     fontSize: 17,
-    fontWeight: '700',
+    fontWeight: '800',
+    letterSpacing: 0.1,
     marginBottom: Spacing.md,
   },
   muted: {
     color: Colors.textMuted,
     fontSize: 14,
     lineHeight: 21,
+  },
+  card: {
+    backgroundColor: Colors.surface,
+    borderColor: Colors.border,
+    borderRadius: 20,
+    borderWidth: 1,
+    padding: Spacing.xl,
   },
 });
 
@@ -63,23 +51,25 @@ const styles = StyleSheet.create({
   content: {
     flexGrow: 1,
     gap: Spacing.xl,
-    padding: Spacing.xl,
-    paddingBottom: Spacing.xxl + 24,
+    paddingHorizontal: Spacing.xl,
+    paddingTop: Spacing.lg,
+    paddingBottom: 48,
   },
   eyebrow: {
     color: Colors.primary,
-    fontSize: 12,
-    fontWeight: '800',
-    letterSpacing: 1.5,
+    fontSize: 11,
+    fontWeight: '900',
+    letterSpacing: 1.8,
   },
   heading: {
     gap: Spacing.sm,
   },
   title: {
     color: Colors.text,
-    fontSize: 30,
-    fontWeight: '800',
-    letterSpacing: -0.7,
+    fontSize: 32,
+    fontWeight: '900',
+    letterSpacing: -0.8,
+    lineHeight: 38,
   },
   subtitle: {
     color: Colors.textMuted,
