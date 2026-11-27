@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
-import Screen, { screenStyles } from '../../components/Screen';
+import Screen, { screenStyles } from '../../components/common/Screen';
 import { Colors, Radius, Spacing } from '../../constants/theme';
 
 export default function ProfileScreen() {

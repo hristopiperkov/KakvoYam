@@ -1,12 +1,14 @@
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
-import Screen, { screenStyles } from '../../components/Screen';
+import Screen, { screenStyles } from '../../components/common/Screen';
+import DiaryCard from '../../components/diary/DiaryCard';
+import { router } from 'expo-router';
 import { Colors, Radius, Spacing } from '../../constants/theme';
 
 const diaryDays = [
-  { number: '01', title: 'Day 1', subtitle: 'Breakfast · Lunch · Dinner · Snacks' },
-  { number: '02', title: 'Day 2', subtitle: 'Breakfast · Lunch · Dinner · Snacks' },
-  { number: '03', title: 'Day 3', subtitle: 'Breakfast · Lunch · Dinner · Snacks' },
+  { id: '1', number: '01', title: 'Day 1', subtitle: 'Breakfast · Lunch · Dinner · Snacks' },
+  { id: '2', number: '02', title: 'Day 2', subtitle: 'Breakfast · Lunch · Dinner · Snacks' },
+  { id: '3', number: '03', title: 'Day 3', subtitle: 'Breakfast · Lunch · Dinner · Snacks' },
 ];
 
 export default function DiaryScreen() {
@@ -45,19 +47,11 @@ export default function DiaryScreen() {
         </View>
 
         {diaryDays.map((day) => (
-          <View key={day.number} style={styles.dayCard}>
-            <View style={styles.dayNumber}>
-              <Text style={styles.dayNumberText}>{day.number}</Text>
-            </View>
-            <View style={styles.dayCopy}>
-              <Text style={styles.dayTitle}>{day.title}</Text>
-              <Text style={styles.daySubtitle}>{day.subtitle}</Text>
-            </View>
-            <View style={styles.dayStatus}>
-              <View style={styles.smallStatusDot} />
-              <Text style={styles.dayStatusText}>PENDING</Text>
-            </View>
-          </View>
+          <DiaryCard
+            key={day.id}
+            day={day}
+            onPress={() => router.push(`/client/diary/${day.id}`)}
+          />
         ))}
       </View>
 
@@ -156,62 +150,6 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: '800',
     letterSpacing: 0.8,
-  },
-  dayCard: {
-    alignItems: 'center',
-    backgroundColor: Colors.surface,
-    borderColor: Colors.border,
-    borderRadius: Radius.lg,
-    borderWidth: 1,
-    flexDirection: 'row',
-    gap: Spacing.md,
-    padding: Spacing.lg,
-  },
-  dayNumber: {
-    alignItems: 'center',
-    backgroundColor: Colors.accent,
-    borderColor: '#48502E',
-    borderRadius: Radius.md,
-    borderWidth: 1,
-    height: 44,
-    justifyContent: 'center',
-    width: 44,
-  },
-  dayNumberText: {
-    color: Colors.primary,
-    fontSize: 13,
-    fontWeight: '900',
-  },
-  dayCopy: {
-    flex: 1,
-    gap: 5,
-  },
-  dayTitle: {
-    color: Colors.text,
-    fontSize: 15,
-    fontWeight: '800',
-  },
-  daySubtitle: {
-    color: Colors.textMuted,
-    fontSize: 10,
-    lineHeight: 15,
-  },
-  dayStatus: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 5,
-  },
-  smallStatusDot: {
-    backgroundColor: Colors.textMuted,
-    borderRadius: Radius.pill,
-    height: 5,
-    width: 5,
-  },
-  dayStatusText: {
-    color: Colors.textMuted,
-    fontSize: 8,
-    fontWeight: '900',
-    letterSpacing: 0.4,
   },
   tipCard: {
     alignItems: 'flex-start',

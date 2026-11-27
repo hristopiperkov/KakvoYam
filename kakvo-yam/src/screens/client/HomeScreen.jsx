@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import Screen, { screenStyles } from '../../components/Screen';
+import Screen, { screenStyles } from '../../components/common/Screen';
 import { Colors, Radius, Spacing } from '../../constants/theme';
 
 const steps = [
@@ -53,7 +53,7 @@ export default function HomeScreen() {
 
         <Pressable
           accessibilityRole="button"
-          onPress={() => router.push('/(tabs)/diary')}
+          onPress={() => router.push('/client/diary')}
           style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
         >
           <Text style={styles.buttonText}>Open my diary</Text>
